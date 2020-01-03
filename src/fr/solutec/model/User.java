@@ -18,8 +18,8 @@ public class User {
     public User() {
     }
 
-    public User(int Id, String nom, String prenom, String login, String mdp, String mail, double poids, double taille, int age, int sexe) {
-        this.Id = Id;
+    public User( String nom, String prenom, String login, String mdp, String mail, double poids, double taille, int age, int sexe) {
+        //this.Id = Id;
         this.nom = nom;
         this.prenom = prenom;
         this.login = login;

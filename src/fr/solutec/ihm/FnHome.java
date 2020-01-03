@@ -5,6 +5,10 @@
  */
 package fr.solutec.ihm;
 
+import fr.solutec.dao.UserDao;
+import fr.solutec.model.User;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author esic
@@ -32,13 +36,18 @@ public class FnHome extends javax.swing.JFrame {
         ButInscrire = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtLogin = new javax.swing.JTextField();
+        txtMdp = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         ButValider.setText("Valider");
+        ButValider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButValiderActionPerformed(evt);
+            }
+        });
 
         ButInscrire.setText("S'inscrire");
         ButInscrire.addActionListener(new java.awt.event.ActionListener() {
@@ -51,9 +60,9 @@ public class FnHome extends javax.swing.JFrame {
 
         jLabel2.setText("Mdp");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtLoginActionPerformed(evt);
             }
         });
 
@@ -76,8 +85,8 @@ public class FnHome extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(71, 71, 71)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(txtMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                    .addComponent(txtLogin))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -95,11 +104,11 @@ public class FnHome extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtMdp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButValider)
@@ -121,15 +130,35 @@ public class FnHome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtLoginActionPerformed
 
     private void ButInscrireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButInscrireActionPerformed
         this.setVisible(false);
        Inscription In = new Inscription();
         In.setVisible(true);
     }//GEN-LAST:event_ButInscrireActionPerformed
+
+    private void ButValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButValiderActionPerformed
+         String login = txtLogin.getText();
+        String mdp = txtMdp.getText();
+        
+        
+        try {
+            User user = UserDao.getByLoginAndPass(login, mdp);
+            if(user!=null){
+                JOptionPane.showMessageDialog(rootPane, "Bonjour" + user.getPrenom());
+                //new FnMembre().setVisible(true);
+            }
+            else{
+                JOptionPane.showMessageDialog(rootPane, "Tu n'es pas d'ici");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, e.getMessage());
+        }
+        
+    }//GEN-LAST:event_ButValiderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,7 +202,7 @@ public class FnHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtLogin;
+    private javax.swing.JPasswordField txtMdp;
     // End of variables declaration//GEN-END:variables
 }

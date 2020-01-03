@@ -5,6 +5,8 @@
  */
 package fr.solutec.ihm;
 
+import fr.solutec.dao.UserDao;
+import fr.solutec.model.User;
 import javax.swing.JOptionPane;
 
 /**
@@ -43,9 +45,6 @@ public class Inscription extends javax.swing.JFrame {
         txtPoids = new javax.swing.JTextField();
         txtAge = new javax.swing.JTextField();
         btSoumettre = new javax.swing.JButton();
-        btHomme = new javax.swing.JRadioButton();
-        btFemme = new javax.swing.JRadioButton();
-        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,12 +74,6 @@ public class Inscription extends javax.swing.JFrame {
                 btSoumettreActionPerformed(evt);
             }
         });
-
-        btHomme.setText("Homme");
-
-        btFemme.setText("Femme");
-
-        jLabel11.setText("Sexe:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -115,15 +108,9 @@ public class Inscription extends javax.swing.JFrame {
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel11))
+                                    .addComponent(jLabel9))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btHomme)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                                        .addComponent(btFemme)
-                                        .addGap(32, 32, 32))
                                     .addComponent(txtLogin)
                                     .addComponent(txtMdp)
                                     .addComponent(txtTaille)
@@ -168,12 +155,7 @@ public class Inscription extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btHomme)
-                    .addComponent(btFemme)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btSoumettre)
                     .addComponent(jLabel10))
@@ -198,24 +180,44 @@ public class Inscription extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSoumettreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSoumettreActionPerformed
-         String nom=txtNom.getText();
+        String nom=txtNom.getText();
         String prenom=txtPrenom.getText();
         String login=txtLogin.getText();
         String mdp=txtMdp.getText();
-        String homme=btHomme.getText();
-        String femme=btFemme.getText();
+        //String homme=btHomme.getText();
+        //String femme=btFemme.getText();
         String taille=txtTaille.getText();
         String poids=txtPoids.getText();
         String age=txtAge.getText();
         
-        JOptionPane.showMessageDialog(rootPane, femme+homme);
+        //JOptionPane.showMessageDialog(rootPane, femme+homme);
+        
+      User u = new User(nom, prenom, login, mdp, age, WIDTH, WIDTH, ABORT, WIDTH);
+      try {
+             UserDao.inscription(u);
+              JOptionPane.showMessageDialog(rootPane, "save success" );
+            this.setVisible(false);
+      }
+           
+         catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "");
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
       // User u= new User (nom,prenom,login,mdp,)
         
         
         
     }//GEN-LAST:event_btSoumettreActionPerformed
-
+    }
    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -250,12 +252,9 @@ public class Inscription extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton btFemme;
-    private javax.swing.JRadioButton btHomme;
     private javax.swing.JButton btSoumettre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
