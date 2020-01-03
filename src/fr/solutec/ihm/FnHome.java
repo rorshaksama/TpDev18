@@ -136,8 +136,8 @@ public class FnHome extends javax.swing.JFrame {
 
     private void ButInscrireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButInscrireActionPerformed
         this.setVisible(false);
-       Inscription In = new Inscription();
-        In.setVisible(true);
+      // Inscription In = new Inscription();
+        //In.setVisible(true);
     }//GEN-LAST:event_ButInscrireActionPerformed
 
     private void ButValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButValiderActionPerformed
