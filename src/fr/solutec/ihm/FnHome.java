@@ -41,6 +41,11 @@ public class FnHome extends javax.swing.JFrame {
         ButValider.setText("Valider");
 
         ButInscrire.setText("S'inscrire");
+        ButInscrire.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButInscrireActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Login");
 
@@ -119,6 +124,12 @@ public class FnHome extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void ButInscrireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButInscrireActionPerformed
+        this.setVisible(false);
+       Inscription In = new Inscription();
+        In.setVisible(true);
+    }//GEN-LAST:event_ButInscrireActionPerformed
 
     /**
      * @param args the command line arguments
