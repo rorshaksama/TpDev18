@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -79,25 +79,31 @@
                                       <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace pref="26" max="32767" attributes="0"/>
                                           <Component id="btHomme" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="75" max="32767" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="btFemme" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="btAutre" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="txtLogin" max="32767" attributes="0"/>
-                                      <Component id="txtMdp" max="32767" attributes="0"/>
-                                      <Component id="txtTaille" max="32767" attributes="0"/>
-                                      <Component id="txtPoids" max="32767" attributes="0"/>
-                                      <Component id="txtAge" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtAge" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtPoids" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtTaille" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtMdp" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtLogin" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -151,6 +157,7 @@
                       <Component id="btHomme" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btFemme" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btAutre" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -250,6 +257,11 @@
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sexe:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="btAutre">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Autre"/>
           </Properties>
         </Component>
       </SubComponents>
