@@ -15,7 +15,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `dev18tpbinome`
 --
-
+CREATE SCHEMA IF NOT EXISTS `dev18tpbinome`;
+USE `dev18tpbinome`;
 -- --------------------------------------------------------
 
 --
@@ -47,7 +48,6 @@ CREATE TABLE IF NOT EXISTS `objhebdo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
-
 --
 -- Structure de la table `person`
 --
