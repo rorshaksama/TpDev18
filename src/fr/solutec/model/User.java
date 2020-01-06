@@ -35,12 +35,13 @@ public class User {
 //        this.lastCo = lastCo;
 //    }
 
-    public User(String nom, String prenom, String login, String mdp, boolean sexe) {
+    public User(String nom, String prenom, String login, String mdp,String mail, boolean sexe) {
         this.nom = nom;
         this.prenom = prenom;
         this.login = login;
         this.mdp = mdp;
         this.sexe=sexe;
+        this.mail=mail;
     }
 
         

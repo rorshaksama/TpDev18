@@ -64,6 +64,9 @@ public class FnHome extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Mot de Passe");
 
+        txtLogin.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.highlight"));
+        txtLogin.setDoubleBuffered(true);
+        txtLogin.setDragEnabled(true);
         txtLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLoginActionPerformed(evt);
@@ -155,7 +158,7 @@ public class FnHome extends javax.swing.JFrame {
                 //new FnMembre().setVisible(true);
             }
             else{
-                JOptionPane.showMessageDialog(rootPane, "Tu n'es pas d'ici");
+                JOptionPane.showMessageDialog(rootPane, "Vous n'avez pas de compte. Inscrivez-vous");
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
