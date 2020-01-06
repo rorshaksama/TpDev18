@@ -38,7 +38,7 @@ public class FnUser extends javax.swing.JFrame {
 
         jLabel6.setText("Bonjour,");
 
-        jButton1.setText("Acutaliser");
+        jButton1.setText("Actualiser");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

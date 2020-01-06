@@ -197,8 +197,10 @@ public class Inscription extends javax.swing.JFrame {
         
         try{
             UserDao.inscription(u);
-            JOptionPane.showMessageDialog(rootPane, "Inscription validée" );
+            //JOptionPane.showMessageDialog(rootPane, "Inscription validée" );
+            new FnDescription().setVisible(true);
             this.setVisible(false);
+            
             
            
             

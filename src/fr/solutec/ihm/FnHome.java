@@ -154,8 +154,9 @@ public class FnHome extends javax.swing.JFrame {
         try {
             User user = UserDao.getByLoginAndPass(login, mdp);
             if(user!=null){
-                JOptionPane.showMessageDialog(rootPane, "Bonjour " + user.getPrenom());
-                //new FnMembre().setVisible(true);
+                //JOptionPane.showMessageDialog(rootPane, "Bonjour " + user.getPrenom());
+                new FnDescription().setVisible(true);
+                this.setVisible(false);
             }
             else{
                 JOptionPane.showMessageDialog(rootPane, "Vous n'avez pas de compte. Inscrivez-vous");
