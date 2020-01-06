@@ -44,7 +44,7 @@ public class UserDao {
     }
 
 public static void inscription (User person) throws SQLException{
-    String sql = "INSERT INTO person(nom,prenom,mail,login,mdp) VALUES(?,?,?,?,?,1)";
+    String sql = "INSERT INTO person(nom,prenom,mail,login,mdp,sexe) VALUES(?,?,?,?,?,1)";
         
         Connection connexion = AccessBd.getConnection();
         PreparedStatement requete = connexion.prepareStatement(sql);
