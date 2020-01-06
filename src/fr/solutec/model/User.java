@@ -6,7 +6,7 @@ import java.sql.Date;
 
 public class User {
     
-  //  private int Id;
+    private int Id;
     private String nom;
     private String prenom;
     private String login;
@@ -50,9 +50,8 @@ public class User {
         return "User{, nom=" + nom + ", prenom=" + prenom + ", login=" + login + ", mdp=" + mdp + ", mail=" + mail + ", poids=" + poids + ", taille=" + taille + ", age=" + age + ", sexe=" + sexe + '}';
     }
 
-//    public void setId(int Id) {
-//        this.Id = Id;
-//    }
+    public void setId(int Id) {
+        this.Id = Id;    }
 
     public void setNom(String nom) {
         this.nom = nom;
@@ -86,9 +85,9 @@ public class User {
     }
 
     
-//    public int getId() {
-//        return Id;
-//    }
+    public int getId() {
+        return Id;
+    }
     public boolean getSexe() {
         return sexe;
     }

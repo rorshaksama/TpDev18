@@ -6,6 +6,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.List;
+import java.util.ArrayList;
 
 
 public class UserDao {
@@ -86,7 +89,20 @@ public static void inscription (User person) throws SQLException{
 //
 //    }
 
-
+public static List<User> getAllPerson() throws SQLException{
+    List<User> users=new ArrayList<>();
+    String sql="SELECT * FROM person";
+    Connection connexion = AccessBd.getConnection();
+    Statement requete=connexion.createStatement();
+    ResultSet rs=requete.executeQuery(sql);
+    while (rs.next()){
+        User u=new User();
+        u=new User();
+        u.setId(rs.getInt("idhp"));
+        u.setPoids(rs.getInt("poids"));
+        users.add(u);
+    }return users;
+}
 
 
 
