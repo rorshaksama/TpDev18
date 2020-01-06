@@ -136,8 +136,8 @@ public class FnHome extends javax.swing.JFrame {
 
     private void ButInscrireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButInscrireActionPerformed
         this.setVisible(false);
-      // Inscription In = new Inscription();
-        //In.setVisible(true);
+      Inscription In = new Inscription();
+       In.setVisible(true);
     }//GEN-LAST:event_ButInscrireActionPerformed
 
     private void ButValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButValiderActionPerformed
@@ -148,7 +148,7 @@ public class FnHome extends javax.swing.JFrame {
         try {
             User user = UserDao.getByLoginAndPass(login, mdp);
             if(user!=null){
-                JOptionPane.showMessageDialog(rootPane, "Bonjour" + user.getPrenom());
+                JOptionPane.showMessageDialog(rootPane, "Bonjour " + user.getPrenom());
                 //new FnMembre().setVisible(true);
             }
             else{
@@ -159,7 +159,11 @@ public class FnHome extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_ButValiderActionPerformed
-
+//private void btDeconnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btDeconnexionActionPerformed
+//        this.setVisible(false);
+//        Connexion connexion = new Connexion();
+//        connexion.setVisible(true);
+//    }//GEN-LAST:event_btDeconnexionActionPerformed
     /**
      * @param args the command line arguments
      */
