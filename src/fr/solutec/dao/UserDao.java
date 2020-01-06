@@ -64,7 +64,7 @@ public static void inscription (User person) throws SQLException{
         requete.execute();
     }
 
-//       public static void insertObjectifPoidsSemaine(DonneesSemaine donneesSemaine)throws SQLException{
+//     public static void insertObjectifPoidsJour(ObjJour donneesJour)throws SQLException{
 //        
 //            /*
 //                    this.objectifRealise = objectifRealise;
@@ -74,16 +74,16 @@ public static void inscription (User person) throws SQLException{
 //        this.idUser = idUser;
 //            */
 //            
-//        String sql = "INSERT INTO DonneesSemaine(objectifRealise,categorie,semaine,valeur,idUser) VALUE (?, ?, ?, ?,?)";
-//        Connection connexion = AccessBD.getConnection();
+//        String sql = "INSERT INTO DonneesJour (objectifRealise,categorie,date,valeur,idUser) VALUE (?, ?, ?, ?,?)";
+//        Connection connexion = AccessBd.getConnection();
 //        
 //        PreparedStatement requete = connexion.prepareStatement(sql);
 //        
-//        requete.setBoolean(1, donneesSemaine.isObjectifRealise());
-//        requete.setString(2, donneesSemaine.getCategorie());
-//        requete.setInt (3, donneesSemaine.getSemaine());
-//        requete.setDouble(4, donneesSemaine.getValeur());
-//        requete.setInt(5, donneesSemaine.getIdUser());
+//        requete.setBoolean(1, donneesJour.isObjectifRealise());
+//        requete.setString(2, donneesJour.getCategorie());
+//        requete.setDate(3,  donneesJour.getDate());
+//        requete.setDouble(4, donneesJour.getValeur());
+//        requete.setInt(5, donneesJour.getIdUser());
 //        
 //        requete.execute();
 //
