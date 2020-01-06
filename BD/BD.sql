@@ -15,7 +15,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `dev18tpbinome`
 --
-
+CREATE SCHEMA IF NOT EXISTS `dev18tpbinome`;
 -- --------------------------------------------------------
 
 --
