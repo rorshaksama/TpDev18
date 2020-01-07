@@ -34,7 +34,7 @@ public class User {
 //        this.sexe = sexe;
 //        this.lastCo = lastCo;
 //    }
-
+    
     public User(String nom, String prenom, String login, String mdp,String mail, boolean sexe) {
         this.nom = nom;
         this.prenom = prenom;

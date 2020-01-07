@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 import java.util.ArrayList;
+import fr.solutec.ihm.FnHome;
+import static fr.solutec.ihm.FnHome.capte;
 
 
 public class UserDao {
@@ -29,7 +31,7 @@ public class UserDao {
         
         if(rs.next()){
             u = new User();
-           // u.setId(rs.getInt("idperson"));
+            u.setId(rs.getInt("idperson"));
             u.setNom(rs.getString("nom"));
             u.setPrenom(rs.getString("prenom"));
             u.setLogin(rs.getString("login"));
@@ -64,37 +66,16 @@ public static void inscription (User person) throws SQLException{
         requete.execute();
     }
 
-//     public static void insertObjectifPoidsJour(ObjJour donneesJour)throws SQLException{
-//        
-//            /*
-//                    this.objectifRealise = objectifRealise;
-//        this.categorie = categorie;
-//        this.date = date;
-//        this.valeur = valeur;
-//        this.idUser = idUser;
-//            */
-//            
-//        String sql = "INSERT INTO DonneesJour (objectifRealise,categorie,date,valeur,idUser) VALUE (?, ?, ?, ?,?)";
-//        Connection connexion = AccessBd.getConnection();
-//        
-//        PreparedStatement requete = connexion.prepareStatement(sql);
-//        
-//        requete.setBoolean(1, donneesJour.isObjectifRealise());
-//        requete.setString(2, donneesJour.getCategorie());
-//        requete.setDate(3,  donneesJour.getDate());
-//        requete.setDouble(4, donneesJour.getValeur());
-//        requete.setInt(5, donneesJour.getIdUser());
-//        
-//        requete.execute();
-//
-//    }
+
 
 public static List<User> getAllPerson() throws SQLException{
     List<User> users=new ArrayList<>();
-    String sql="SELECT * FROM person";
+    String sql="select * from histopoids h inner join person p on h.idPerson=p.idPerson where p.login = ? ";
+    String test=capte.getLogin();          
     Connection connexion = AccessBd.getConnection();
-    Statement requete=connexion.createStatement();
-    ResultSet rs=requete.executeQuery(sql);
+    PreparedStatement requete=connexion.prepareStatement(sql);    
+    requete.setString(1,test);
+    ResultSet rs=requete.executeQuery();       
     while (rs.next()){
         User u=new User();
         u=new User();

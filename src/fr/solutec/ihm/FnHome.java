@@ -154,9 +154,10 @@ public class FnHome extends javax.swing.JFrame {
         try {
             User user = UserDao.getByLoginAndPass(login, mdp);
             if(user!=null){
-                //JOptionPane.showMessageDialog(rootPane, "Bonjour " + user.getPrenom());
+                //JOptionPane.showMessageDialog(rootPane, "Bonjour " + user.getLogin());
                 new FnDescription().setVisible(true);
                 this.setVisible(false);
+                capte=user; //Stock le login de l'utilisateur qui vient de se connecter dans une variable public
             }
             else{
                 JOptionPane.showMessageDialog(rootPane, "Vous n'avez pas de compte. Inscrivez-vous");
@@ -205,6 +206,11 @@ public class FnHome extends javax.swing.JFrame {
             }
         });
     }
+public static  User capte; //Créer une variable public pour le login
+
+
+        
+                
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButInscrire;

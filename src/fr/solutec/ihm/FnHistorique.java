@@ -33,7 +33,7 @@ public class FnHistorique extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Ipoids = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         btRetour = new javax.swing.JButton();
 
@@ -44,7 +44,7 @@ public class FnHistorique extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Ipoids.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -55,7 +55,7 @@ public class FnHistorique extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(Ipoids);
 
         jLabel1.setText("Historique de vos informations:");
 
@@ -114,7 +114,7 @@ public class FnHistorique extends javax.swing.JFrame {
         DefaultTableModel model= new DefaultTableModel();
         model.addColumn("ID");
         model.addColumn("Poids");
-        // model.addColumn("ID utilisateur");
+       // model.addColumn("ID utilisateur");
         
         try{
             List<User> users=UserDao.getAllPerson();
@@ -129,6 +129,7 @@ public class FnHistorique extends javax.swing.JFrame {
         } catch (Exception e){
             JOptionPane.showMessageDialog(rootPane, e.getMessage());
         }
+        Ipoids.setModel(model);
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -170,10 +171,10 @@ public class FnHistorique extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Ipoids;
     private javax.swing.JButton btRetour;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

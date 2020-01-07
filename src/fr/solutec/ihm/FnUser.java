@@ -5,7 +5,9 @@
  */
 package fr.solutec.ihm;
 
+import static fr.solutec.ihm.FnHome.capte;
 import fr.solutec.model.User;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,6 +40,7 @@ public class FnUser extends javax.swing.JFrame {
         accNom = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btHisto = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,6 +59,13 @@ public class FnUser extends javax.swing.JFrame {
 
         jLabel1.setText("Cliquer ici pour actualiser vos informations");
 
+        btHisto.setText("Historique");
+        btHisto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btHistoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -73,7 +83,10 @@ public class FnUser extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(jButton1)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel1)))
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(btHisto)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -88,7 +101,9 @@ public class FnUser extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addComponent(btHisto)
+                .addGap(44, 44, 44)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jLabel1))
@@ -115,6 +130,20 @@ public class FnUser extends javax.swing.JFrame {
         InfosPersonne ip = new InfosPersonne();
                 ip.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btHistoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHistoActionPerformed
+        // TODO add your handling code here:
+        //String test=u.getLogin();
+        //JOptionPane.showMessageDialog(rootPane, test);
+        
+        
+        
+        
+        this.setVisible(false);
+        
+        FnHistorique fh=new FnHistorique();
+        fh.setVisible(true);
+    }//GEN-LAST:event_btHistoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -154,6 +183,7 @@ public class FnUser extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel accNom;
+    private javax.swing.JToggleButton btHisto;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
